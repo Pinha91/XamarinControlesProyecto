@@ -13,7 +13,7 @@ namespace XamarinControlesProyecto
         {
             InitializeComponent();
 
-            MainPage = new XamarinControlesProyecto.MainPage();
+            MainPage = new Vistas();
         }
 
         protected override void OnStart()

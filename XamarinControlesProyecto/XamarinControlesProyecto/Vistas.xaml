@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinControlesProyecto.Vistas">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"  Padding="5">
+            
+            <Label 
+                   x:Name="titulo"
+                   FontSize="22" 
+                   Text="Búsqueda de contactos"
+                   TextColor="Black" 
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center" />
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label 
+                       x:Name="enunciadoActivarFichero"
+                       FontSize="14" 
+                       Text="Activar fichero seleccionado: " 
+                       TextColor="Black" 
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="Center" 
+                       WidthRequest="100" />
+
+                <Button  
+                         x:Name="botonBuscar"
+                         HorizontalOptions="EndAndExpand" 
+                         Text="Examinar"
+                         TextColor="Black"
+                         BackgroundColor="Green" />
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                
+                <Label 
+                       x:Name="enunciadoBuscarNombre"
+                       FontSize="14" 
+                       Text="Búsqueda: " 
+                       TextColor="Black" 
+                       HorizontalOptions="Fill"
+                       WidthRequest="100" />
+                
+                <Entry
+                    x:Name="txtBusqueda"
+                    FontSize="14" 
+                    Placeholder="escribir aquí el nombre del usuario..."
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center" 
+                />
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label 
+                       x:Name="enunciadoMinimaEdad"
+                       FontSize="14" 
+                       Text="Minima Edad: " 
+                       TextColor="Black" 
+                       HorizontalOptions="Fill"
+                       WidthRequest="100" />
+
+                <Entry
+                    x:Name="txtMinEdad"
+                    FontSize="14" 
+                    Placeholder="escribir aquí la edad mínima..."
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center" 
+                />
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label 
+                       x:Name="enunciadoMaximaEdad"
+                       FontSize="14" 
+                       Text="Maxima Edad: " 
+                       TextColor="Black" 
+                       HorizontalOptions="Fill"
+                       WidthRequest="100" />
+
+                <Entry
+                    x:Name="txtMaxEdad"
+                    FontSize="14" 
+                    Placeholder="escribir aquí la edad máxima..."
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center" 
+                />
+
+            </StackLayout>
+
+            <ListView x:Name="listaContactos">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="#eee"
+                                 Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Nombre}"/>
+                                    <Label Text="{Binding Edad}" XAlign="Center"/>
+                                    <Label Text="{Binding Dni}" XAlign="End"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -15,53 +15,31 @@ namespace XamarinControlesProyecto
     {
         List<Contacto> contactos;//Lista de contactos que obtendremos del fichero que el usuario debe indicar
         List<Contacto> contactosMostrar; //Lista de contactos que obtendremos de la busqueda
+        List<Contacto> contactoVacio = new List<Contacto>();//Lista de contacto vacio;
         MatchCollection matches; // Necesario para analizar cadenas con matches y expresiones regulares.
-        
+        Boolean error;//Controlar la información del listView si hay un error no mostrar nada.
+
         public Vistas()
         {
             InitializeComponent();
-
+            //Al seleccionar el botón accede a los datos automáticamente a los datos del archivo.txt
             botonBuscar.Clicked += (sender, args) =>
             {
-                contactos = Leer.LeerArchivo(Properties.Resources.Info);
-                contactosMostrar = new List<Contacto>();
+                contactos = Leer.LeerArchivo(Properties.Resources.Info);//Accede a la ruta dentro del proyecto
+                contactosMostrar = new List<Contacto>();//Declaramos contactosMostar, donde ahí tendrá los datos a mostrar en el listView
+                mensajeError.Text = "";//Refesco el mensaje
+                error = false;//Resfreco el controlador del error.
 
-                if (txtMaxEdad == null)
-                {
-                    txtMaxEdad.Text = "";
-                }
-
-                if (txtBusqueda == null)
-                {
-                    txtBusqueda.Text = "";
-                }
-
-                if (txtMinEdad == null)
-                {
-                    txtMinEdad.Text = "";
-                }
-
-                buscar();
-               /* for (contador=0;contador<contactos.Count;contador++)
-                {//contactos[contador]!=null && 
-                    if (contactos[contador].Nombre.Equals("David"))
-                    {
-                        contactosMostrar.Add(contactos[contador]);
-                    }
-
-                }
-
-                listaContactos.ItemsSource = contactosMostrar;*/
+                buscar();//Iniciacimos la búsqueda
             };
 
         }
         /// <summary>
-        /// Busca en el array que ha generado el leerArchivo con los valores indicados, sino se indica un error.
+        /// Se busca en el array que ha generado el leerArchivo con los valores indicados, sino se indica un error.
         /// </summary>
         private void buscar()
         {
-
-            int edad1, edad2;
+            int edad1, edad2; ///!string.IsNullOrEmpty(txtMaxEdad.Text) es lo mismo que Text=""; es otra solucion
 
             //Si no hay campos vacios
             if (!txtMaxEdad.Text.Equals("") && !txtMinEdad.Text.Equals("") && !txtBusqueda.Text.Equals(""))
@@ -85,7 +63,10 @@ namespace XamarinControlesProyecto
                 else
                 {
                     txtMaxEdad.Text = txtMinEdad.Text = "";
-                    //lanzarAdvertencia("Ningun campo edad puede componerse por letras, solo aceptan valores numéricos.");
+                    mensajeError.Text = "Ningun campo edad puede componerse por letras, solo aceptan valores numéricos.";
+                    error = true;
+                    //Si no entro en ninguna condicion limpio el buffer del ListView.
+                    listaContactos.ItemsSource = contactoVacio;
                 }
             }
             else if (!txtMinEdad.Text.Equals(""))
@@ -98,7 +79,10 @@ namespace XamarinControlesProyecto
                 else
                 {
                     txtMaxEdad.Text = txtMinEdad.Text = "";
-                    //lanzarAdvertencia("Ningun campo edad puede componerse por letras, solo aceptan valores numéricos.");
+                    mensajeError.Text = "Ningun campo edad puede componerse por letras, solo aceptan valores numéricos.";
+                    error = true;
+                    //Si no entro en ninguna condicion limpio el buffer del ListView.
+                    listaContactos.ItemsSource = contactoVacio;
                 }
             }
             else { realizarBusqueda(); }
@@ -116,14 +100,20 @@ namespace XamarinControlesProyecto
                 if (int.Parse(txtMinEdad.Text.ToString()) >= int.Parse(txtMaxEdad.Text.ToString()))
                 {
                     //Mostrar advertencia
-                   // lanzarAdvertencia("La edad mínima no puede ser mayor o igual a la máxima.");
+                    mensajeError.Text="La edad mínima no puede ser mayor o igual a la máxima.";
+                    error = true;
+                    //Si no entro en ninguna condicion limpio el buffer del ListView.
+                    listaContactos.ItemsSource = contactoVacio;
                 }
                 else { realizarBusqueda(); }
             }
             else
             {
                 txtMaxEdad.Text = txtMinEdad.Text = "";
-                //lanzarAdvertencia("Ningun campo edad puede componerse por letras, solo aceptan valores numéricos.");
+                mensajeError.Text = "Ningun campo edad puede componerse por letras, solo aceptan valores numéricos.";
+                error = true;
+                //Si no entro en ninguna condicion limpio el buffer del ListView.
+                listaContactos.ItemsSource = contactoVacio;
             }
         }
         /// <summary>
@@ -150,9 +140,21 @@ namespace XamarinControlesProyecto
                     contactosMostrar.Add(contactos[i]);
                 }
             }
-            listaContactos.ItemsSource = contactosMostrar;
+
+            if (error)//Si hay algún error mustro la lista vacía
+            {
+                listaContactos.ItemsSource = contactoVacio;
+            }
+            else//Sino muestro los datos correspondiente.
+            {
+                listaContactos.ItemsSource = contactosMostrar;
+            }
+            
             //Si no se encontro ninguna coincidencia se informa
-            //  if (contactosMostrar.Count == 0) { lanzarAdvertencia("No se encontro ninguna coincidencia, prueba de nuevo."); }
+            if (contactosMostrar.Count == 0) {
+                mensajeError.Text = "No se encontro ninguna coincidencia, prueba de nuevo.";
+                error = true;
+            }
         }
         /// <summary>
         /// Metodo que comprueba si el nombre del contacto tiene alguna coincidencia con el filtro de busqueda.
@@ -170,7 +172,8 @@ namespace XamarinControlesProyecto
             /// Primero tenemos que controlar que en el filtro no hemos introducido mas de un %.
             if (matches.Count > 1)
             {
-              //  inputControl(txtBusqueda, "No puede indicar más de un % en una busqueda.");
+              mensajeError.Text = "No puede indicar más de un % en una busqueda.";
+              error = true;
             }
             else
             {
@@ -282,22 +285,6 @@ namespace XamarinControlesProyecto
 
             return ok;
         }
-        /// <summary>
-        /// Muestra mensaje de error con mas de un %
-        /// </summary>
-        /// <param name="control"></param>
-        /// <param name="mensaje"></param>
-       /* private void inputControl(TextBox control, String mensaje)
-        {
-            int edad;
-
-            if (!int.TryParse(txtMaxEdad.Text.Trim(), out edad))
-            {
-                control.Text = "";
-                //Mostrar advertencia
-                lanzarAdvertencia(mensaje);
-            }
-        }*/
 
     }
 }

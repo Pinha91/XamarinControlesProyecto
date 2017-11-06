@@ -6,47 +6,48 @@
         <StackLayout Orientation="Vertical"  Padding="5">
             
             <Label 
-                   x:Name="titulo"
-                   FontSize="22" 
-                   Text="Búsqueda de contactos"
-                   TextColor="Black" 
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="Center" />
+                x:Name="titulo"
+                FontSize="22" 
+                Text="Búsqueda de contactos"
+                TextColor="Black" 
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Center" />
 
             <StackLayout Orientation="Horizontal">
 
                 <Label 
-                       x:Name="enunciadoActivarFichero"
-                       FontSize="14" 
-                       Text="Activar fichero seleccionado: " 
-                       TextColor="Black" 
-                       HorizontalOptions="FillAndExpand"
-                       VerticalOptions="Center" 
-                       WidthRequest="100" />
+                    x:Name="enunciadoActivarFichero"
+                    FontSize="14" 
+                    Text="Activar fichero seleccionado: " 
+                    TextColor="Black" 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center" 
+                    WidthRequest="100" />
 
                 <Button  
-                         x:Name="botonBuscar"
-                         HorizontalOptions="EndAndExpand" 
-                         Text="Examinar"
-                         TextColor="Black"
-                         BackgroundColor="Green" />
+                    x:Name="botonBuscar"
+                    HorizontalOptions="EndAndExpand" 
+                    Text="Examinar"
+                    TextColor="Black"
+                    BackgroundColor="Green" />
 
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                
-                <Label 
-                       x:Name="enunciadoBuscarNombre"
-                       FontSize="14" 
-                       Text="Búsqueda: " 
-                       TextColor="Black" 
-                       HorizontalOptions="Fill"
-                       WidthRequest="100" />
-                
+
+                <Label
+                    x:Name="enunciadoBuscarNombre"
+                    FontSize="14" 
+                    Text="Búsqueda: "
+                    TextColor="Black" 
+                    HorizontalOptions="Fill"
+                    WidthRequest="100" />
+
                 <Entry
                     x:Name="txtBusqueda"
-                    FontSize="14" 
+                    FontSize="14"
                     Placeholder="escribir aquí el nombre del usuario..."
+                    Text=""
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center" 
                 />
@@ -56,17 +57,18 @@
             <StackLayout Orientation="Horizontal">
 
                 <Label 
-                       x:Name="enunciadoMinimaEdad"
-                       FontSize="14" 
-                       Text="Minima Edad: " 
-                       TextColor="Black" 
-                       HorizontalOptions="Fill"
-                       WidthRequest="100" />
+                    x:Name="enunciadoMinimaEdad"
+                    FontSize="14" 
+                    Text="Minima Edad: " 
+                    TextColor="Black" 
+                    HorizontalOptions="Fill"
+                    WidthRequest="100" />
 
                 <Entry
                     x:Name="txtMinEdad"
-                    FontSize="14" 
+                    FontSize="14"
                     Placeholder="escribir aquí la edad mínima..."
+                    Text=""
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="Center" 
                 />
@@ -76,20 +78,34 @@
             <StackLayout Orientation="Horizontal">
 
                 <Label 
-                       x:Name="enunciadoMaximaEdad"
-                       FontSize="14" 
-                       Text="Maxima Edad: " 
-                       TextColor="Black" 
-                       HorizontalOptions="Fill"
-                       WidthRequest="100" />
+                    x:Name="enunciadoMaximaEdad"
+                    FontSize="14" 
+                    Text="Maxima Edad: " 
+                    TextColor="Black" 
+                    HorizontalOptions="Fill"
+                    WidthRequest="100" />
 
                 <Entry
                     x:Name="txtMaxEdad"
                     FontSize="14" 
                     Placeholder="escribir aquí la edad máxima..."
+                    Text=""
                     HorizontalOptions="FillAndExpand"
-                    VerticalOptions="Center" 
+                    VerticalOptions="CenterAndExpand" 
                 />
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label
+                    x:Name="mensajeError"
+                    FontSize="14" 
+                    Text=""
+                    TextColor="Black" 
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Center"
+                    WidthRequest="1000" />
 
             </StackLayout>
 

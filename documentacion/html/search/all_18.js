@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['android',['android',['../namespacexamarincontrolesproyecto_1_1android.html',1,'xamarincontrolesproyecto']]],
+  ['droid',['Droid',['../namespace_xamarin_controles_proyecto_1_1_droid.html',1,'XamarinControlesProyecto']]],
+  ['ios',['iOS',['../namespace_xamarin_controles_proyecto_1_1i_o_s.html',1,'XamarinControlesProyecto']]],
+  ['properties',['Properties',['../namespace_xamarin_controles_proyecto_1_1_properties.html',1,'XamarinControlesProyecto']]],
+  ['uwp',['UWP',['../namespace_xamarin_controles_proyecto_1_1_u_w_p.html',1,'XamarinControlesProyecto']]],
+  ['xamarincontrolesproyecto',['xamarincontrolesproyecto',['../namespacexamarincontrolesproyecto.html',1,'xamarincontrolesproyecto'],['../namespace_xamarin_controles_proyecto.html',1,'XamarinControlesProyecto']]],
+  ['xamarincontrolesproyecto_2eapp_2examl_2eg_2ecs',['XamarinControlesProyecto.App.xaml.g.cs',['../_xamarin_controles_proyecto_8_app_8xaml_8g_8cs.html',1,'']]],
+  ['xamarincontrolesproyecto_2emainpage_2examl_2eg_2ecs',['XamarinControlesProyecto.MainPage.xaml.g.cs',['../_xamarin_controles_proyecto_8_main_page_8xaml_8g_8cs.html',1,'']]],
+  ['xamarincontrolesproyecto_2evistas_2examl_2eg_2ecs',['XamarinControlesProyecto.Vistas.xaml.g.cs',['../_xamarin_controles_proyecto_8_vistas_8xaml_8g_8cs.html',1,'']]],
+  ['xamarincontrolesproyecto_5fuwp_5fxamltypeinfo',['XamarinControlesProyecto_UWP_XamlTypeInfo',['../namespace_xamarin_controles_proyecto_1_1_u_w_p_1_1_xamarin_controles_proyecto___u_w_p___xaml_type_info.html',1,'XamarinControlesProyecto::UWP']]],
+  ['xamlmember',['XamlMember',['../class_xamarin_controles_proyecto_1_1_u_w_p_1_1_xamarin_controles_proyecto___u_w_p___xaml_type_info_1_1_xaml_member.html#a7aff9d68f3b37542ddecc6a8891af22e',1,'XamarinControlesProyecto::UWP::XamarinControlesProyecto_UWP_XamlTypeInfo::XamlMember']]],
+  ['xamlmember',['XamlMember',['../class_xamarin_controles_proyecto_1_1_u_w_p_1_1_xamarin_controles_proyecto___u_w_p___xaml_type_info_1_1_xaml_member.html',1,'XamarinControlesProyecto::UWP::XamarinControlesProyecto_UWP_XamlTypeInfo']]],
+  ['xamlsystembasetype',['XamlSystemBaseType',['../class_xamarin_controles_proyecto_1_1_u_w_p_1_1_xamarin_controles_proyecto___u_w_p___xaml_type_info_1_1_xaml_system_base_type.html#a72d2b48c62163a6253daeb60cf2b2e5e',1,'XamarinControlesProyecto::UWP::XamarinControlesProyecto_UWP_XamlTypeInfo::XamlSystemBaseType']]],
+  ['xamlsystembasetype',['XamlSystemBaseType',['../class_xamarin_controles_proyecto_1_1_u_w_p_1_1_xamarin_controles_proyecto___u_w_p___xaml_type_info_1_1_xaml_system_base_type.html',1,'XamarinControlesProyecto::UWP::XamarinControlesProyecto_UWP_XamlTypeInfo']]],
+  ['xamltypeinfo_2eg_2ecs',['XamlTypeInfo.g.cs',['../_xaml_type_info_8g_8cs.html',1,'']]],
+  ['xamltypeinfoprovider',['XamlTypeInfoProvider',['../class_xamarin_controles_proyecto_1_1_u_w_p_1_1_xamarin_controles_proyecto___u_w_p___xaml_type_info_1_1_xaml_type_info_provider.html',1,'XamarinControlesProyecto::UWP::XamarinControlesProyecto_UWP_XamlTypeInfo']]],
+  ['xamlusertype',['XamlUserType',['../class_xamarin_controles_proyecto_1_1_u_w_p_1_1_xamarin_controles_proyecto___u_w_p___xaml_type_info_1_1_xaml_user_type.html#a3bc76ea3edd6c4ab396472fa017debf3',1,'XamarinControlesProyecto::UWP::XamarinControlesProyecto_UWP_XamlTypeInfo::XamlUserType']]],
+  ['xamlusertype',['XamlUserType',['../class_xamarin_controles_proyecto_1_1_u_w_p_1_1_xamarin_controles_proyecto___u_w_p___xaml_type_info_1_1_xaml_user_type.html',1,'XamarinControlesProyecto::UWP::XamarinControlesProyecto_UWP_XamlTypeInfo']]]
+];

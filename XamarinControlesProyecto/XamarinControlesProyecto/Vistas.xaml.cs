@@ -64,7 +64,6 @@ namespace XamarinControlesProyecto
                 {
                     txtMaxEdad.Text = txtMinEdad.Text = "";
                     mensajeError.Text = "Ningun campo edad puede componerse por letras, solo aceptan valores numéricos.";
-                    error = true;
                     //Si no entro en ninguna condicion limpio el buffer del ListView.
                     listaContactos.ItemsSource = contactoVacio;
                 }
@@ -80,7 +79,6 @@ namespace XamarinControlesProyecto
                 {
                     txtMaxEdad.Text = txtMinEdad.Text = "";
                     mensajeError.Text = "Ningun campo edad puede componerse por letras, solo aceptan valores numéricos.";
-                    error = true;
                     //Si no entro en ninguna condicion limpio el buffer del ListView.
                     listaContactos.ItemsSource = contactoVacio;
                 }
@@ -101,7 +99,6 @@ namespace XamarinControlesProyecto
                 {
                     //Mostrar advertencia
                     mensajeError.Text="La edad mínima no puede ser mayor o igual a la máxima.";
-                    error = true;
                     //Si no entro en ninguna condicion limpio el buffer del ListView.
                     listaContactos.ItemsSource = contactoVacio;
                 }
@@ -111,7 +108,6 @@ namespace XamarinControlesProyecto
             {
                 txtMaxEdad.Text = txtMinEdad.Text = "";
                 mensajeError.Text = "Ningun campo edad puede componerse por letras, solo aceptan valores numéricos.";
-                error = true;
                 //Si no entro en ninguna condicion limpio el buffer del ListView.
                 listaContactos.ItemsSource = contactoVacio;
             }
@@ -149,12 +145,14 @@ namespace XamarinControlesProyecto
             {
                 listaContactos.ItemsSource = contactosMostrar;
             }
-            
+
             //Si no se encontro ninguna coincidencia se informa
-            if (contactosMostrar.Count == 0) {
+            if (contactosMostrar.Count == 0)
+            {
                 mensajeError.Text = "No se encontro ninguna coincidencia, prueba de nuevo.";
                 error = true;
             }
+
         }
         /// <summary>
         /// Metodo que comprueba si el nombre del contacto tiene alguna coincidencia con el filtro de busqueda.
